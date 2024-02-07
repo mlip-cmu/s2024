@@ -132,7 +132,12 @@ def nextDate(year: Int, month: Int, day: Int) = ...
 <aside class="notes"><p>Can focus on specification (and concepts in the domain, such as
 leap days and month lengths) or can focus on implementation</p>
 <p>Will not randomly sample from distribution of all days</p>
-</aside></script></section><section data-markdown><script type="text/template">## Software Test Case Design
+</aside></script></section><section data-markdown><script type="text/template"># The V-Model
+
+![V-model](v-model.svg)
+<!-- .element: class="stretch plain" -->
+
+</script></section><section data-markdown><script type="text/template">## Software Test Case Design
 
 <div class="smallish">
 
@@ -215,7 +220,10 @@ def busTicketPrice(age: Int,
 
 > There Is a Racial Divide in Speech-Recognition Systems, Researchers Say:
 > Technology from Amazon, Apple, Google, IBM and Microsoft misidentified 35 percent of words from people who were black. White people fared much better. -- [NYTimes March 2020](https://www.nytimes.com/2020/03/23/technology/speech-recognition-bias-apple-amazon-google.html)
+</script></section><section data-markdown><script type="text/template">## Not All Inputs are Equal
 
+![Corner cases in autonomous driving perception](av-weird-cases.jpg)
+<!-- .element: class="stretch plain" -->
 </script></section><section data-markdown><script type="text/template">## Not All Inputs are Equal
 
 > some random mistakes vs rare but biased mistakes?
@@ -303,7 +311,7 @@ Ré, Christopher, Feng Niu, Pallavi Gudipati, and Charles Srisuwananukorn. "[Ove
 
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Testing Model Capabilities
+</script></section></section><section ><section data-markdown><script type="text/template"># Behavioral Testing (Capabilities)
 
 
 ![Checklist](checklist.jpg)
@@ -548,9 +556,9 @@ Use to identify datasets for **subpopulations** and **capabilities**, not indivi
 
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Automated (Random) Testing and Invariants
+</script></section></section><section ><section data-markdown><script type="text/template"># Testing Invariants with Unlabeled Data
 
-(if it wasn't for that darn oracle problem)
+(random testing, if it wasn't for that darn oracle problem)
 
 ![Random dice throw](random.jpg)
 
@@ -774,38 +782,18 @@ Paths:
 
 
 <aside class="notes"><p>example source: <a href="http://web.cs.iastate.edu/~weile/cs641/9.SymbolicExecution.pdf">http://web.cs.iastate.edu/~weile/cs641/9.SymbolicExecution.pdf</a></p>
-</aside></script></section><section data-markdown><script type="text/template">## Generating Inputs for ML Problems
+</aside></script></section><section data-markdown><script type="text/template">## Generating (Unlabled) Inputs for ML Problems
+
+<div class="smallish">
 
 * Completely random data generation (uniform sampling from each feature's domain)
 * Using knowledge about feature distributions (sample from each feature's distribution)
 * Knowledge about dependencies among features and whole population distribution (e.g., model with probabilistic programming language)
 * Mutate from existing inputs (e.g., small random modifications to select features)
 * Generate "fake data" with Generative Adversarial Networks
-
-</script></section><section data-markdown><script type="text/template">## ML Models = Untestable Software?
-
-<div class="small">
-
-```java
-@Test
-void testCancerPrediction() {
-  cancerModel.predict(generateRandomImage())
-}
-```
-
-
-
-* Manually construct input-output pairs (does not scale, cannot automate)
-    - **too expensive at scale**
-* Comparison against gold standard (e.g., alternative implementation, executable specification)
-    - **no specification, usually no other "correct" model**
-    - comparing different techniques useful? (see ensemble learning)
-    - semi-supervised learning as approximation?
-* Checking of global properties only -- crashes, buffer overflows, code injections    - **??**
-* Manually written assertions -- partial specifications checked at runtime    - **??**
+* *Production data*
 
 </div>
-
 
 </script></section><section data-markdown><script type="text/template">## Invariants in Machine Learned Models (Metamorphic Testing)
 
@@ -972,11 +960,14 @@ Much of the security, safety and robustness literature in ML focuses on invarian
 
 
 
+</script></section></section><section  data-markdown><script type="text/template"># Audits and Red Teaming
+
+<!-- discussion -->
 
 
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Other Testing Concepts
+</script></section><section ><section data-markdown><script type="text/template"># Other Testing Concepts
 
 </script></section><section data-markdown><script type="text/template">
 ## Test Coverage
