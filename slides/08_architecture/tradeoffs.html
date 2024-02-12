@@ -478,6 +478,52 @@ Scenario: Component for detecting credit card frauds, as a service for banks
 * Security, privacy, fairness
 
 
+
+</script></section></section><section ><section data-markdown><script type="text/template">## Constraints and Tradeoffs
+
+![Pareto Front Example](pareto-front.svg)
+<!-- .element: class="stretch plain" -->
+
+<aside class="notes"><p>How do I decide which ML algorithm to use for my project?</p>
+<p>Criteria: Quality Attributes &amp; Constraints</p>
+</aside></script></section><section data-markdown><script type="text/template">## Constraints
+
+Constraints define the space of attributes for valid design solutions
+
+![constraints](design-space.svg)
+<!-- .element: class="stretch plain" -->
+
+<aside class="notes"><p>Design space exploration: The space of all possible designs (dotted rectangle) is reduced by several constraints on qualities of the system, leaving only a subset of designs for further consideration (highlighted center area).</p>
+</aside></script></section><section data-markdown><script type="text/template">## Types of Constraints
+
+**Problem constraints**: Minimum required QAs for an acceptable product
+
+**Project constraint**s: Deadline, project budget, available personnel/skills
+
+**Design constraints**
+* Type of ML task required (regression/classification)
+* Available data
+* Limits on computing resources, max. inference cost/time
+</script></section><section data-markdown><script type="text/template">## Constraints: Cancer Prognosis?
+
+![Radiology scans](radiology-scan.jpg) 
+<!-- .element: class="stretch" -->
+</script></section><section data-markdown><script type="text/template">## Constraints: Music Recommendations?
+
+![Spotify](spotify.png) 
+<!-- .element: class="stretch" -->
+</script></section><section data-markdown><script type="text/template">## Trade-offs between ML algorithms
+
+If there are multiple ML algorithms that satisfy the given constraints, which
+one do we select?
+
+Different ML qualities may conflict with each other; this requires
+making a __trade-off__ between these qualities
+
+Among the qualities of interest, which one(s) do we care the most
+about?
+* And which ML algorithm is most suitable for achieving those qualities?
+* (Similar to requirements conflicts)
 </script></section></section><section ><section data-markdown><script type="text/template"># Common ML Algorithms and their Qualities
 </script></section><section data-markdown><script type="text/template">## Linear Regression
 
@@ -638,81 +684,7 @@ Strubell, Emma, Ananya Ganesh, and Andrew McCallum. "[Energy and Policy Consider
 Strubell, Emma, Ananya Ganesh, and Andrew McCallum. "[Energy and Policy Considerations for Deep Learning in NLP](https://arxiv.org/pdf/1906.02243.pdf)." In Proc. ACL, pp. 3645-3650. 2019.
 
 
-
-
-
-
-
-
-
-</script></section></section><section ><section data-markdown><script type="text/template"># Constraints and Tradeoffs
-
-![Pareto Front Example](pareto-front.svg)
-<!-- .element: class="stretch plain" -->
-
-</script></section><section data-markdown><script type="text/template">## Design Decision: ML Model Selection
-
-How do I decide which ML algorithm to use for my project?
-
-Criteria: Quality Attributes & Constraints
-</script></section><section data-markdown><script type="text/template">## Constraints
-
-Constraints define the space of attributes for valid design solutions
-
-![constraints](design-space.svg)
-<!-- .element: class="stretch plain" -->
-
-<aside class="notes"><p>Design space exploration: The space of all possible designs (dotted rectangle) is reduced by several constraints on qualities of the system, leaving only a subset of designs for further consideration (highlighted center area).</p>
-</aside></script></section><section data-markdown><script type="text/template">## Types of Constraints
-
-**Problem constraints**: Minimum required QAs for an acceptable product
-
-**Project constraint**s: Deadline, project budget, available personnel/skills
-
-**Design constraints**
-* Type of ML task required (regression/classification)
-* Available data
-* Limits on computing resources, max. inference cost/time
-</script></section><section data-markdown><script type="text/template">## Constraints: Cancer Prognosis?
-
-![Radiology scans](radiology-scan.jpg) 
-<!-- .element: class="stretch" -->
-</script></section><section data-markdown><script type="text/template">## Constraints: Music Recommendations?
-
-![Spotify](spotify.png) 
-<!-- .element: class="stretch" -->
-</script></section><section data-markdown><script type="text/template">## Trade-offs between ML algorithms
-
-If there are multiple ML algorithms that satisfy the given constraints, which
-one do we select?
-
-Different ML qualities may conflict with each other; this requires
-making a __trade-off__ between these qualities
-
-Among the qualities of interest, which one(s) do we care the most
-about?
-* And which ML algorithm is most suitable for achieving those qualities?
-* (Similar to requirements conflicts)
-</script></section><section data-markdown><script type="text/template">## Multi-Objective Optimization
-
-<!-- colstart -->
-
-* Determine optimal solutions given multiple, possibly
-  **conflicting** objectives
-* **Dominated** solution: A solution that is inferior to
-  others in every way 
-* **Pareto frontier**: A set of non-dominated solutions
-* Consider trade-offs among Pareto optimal solutions
-
-<!-- col -->
-
-![Pareto Front Example](pareto-front.svg)
-<!-- .element: class="stretch plain" -->
-
-<!-- colend -->
-
-<aside class="notes"><p>Tradeoffs among multiple design solutions along two dimensions (cost and error). Gray solutions are all dominated by others that are better both in terms of cost and error (e.g., solution D has worse error and worse cost than solution A). The remaining black solutions are each better than another solution on one dimension but worse on another — they are all pareto optimal and which solution to pick depends on the relative importance of the dimensions.</p>
-</aside></script></section><section data-markdown><script type="text/template">## Trade-offs: Cost vs Accuracy
+</script></section><section data-markdown><script type="text/template">## Trade-offs: Cost vs Accuracy
 
 <!-- colstart -->
 
