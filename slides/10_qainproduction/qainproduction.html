@@ -203,7 +203,9 @@ As a group post to `#lecture` and tag team members:
 > * Operationalization:
 
 </div>
-</script></section><section data-markdown><script type="text/template">## Monitoring Model Quality in Production
+
+<aside class="notes"><p>about 30 minutes to here</p>
+</aside></script></section><section data-markdown><script type="text/template">## Monitoring Model Quality in Production
 
 * Monitor model quality together with other quality attributes (e.g., uptime, response time, load)
 * Set up automatic alerts when model quality drops
@@ -400,8 +402,8 @@ Toward causal inference
 
 ![A/B test example of a single button's color](ab-button.png)<!-- .element: style="width:1000px" --> 
 
-
-</script></section><section data-markdown><script type="text/template">
+<aside class="notes"><p>about an hour in</p>
+</aside></script></section><section data-markdown><script type="text/template">
 ## Implementing A/B Testing
 
 Implement alternative versions of the system
@@ -415,7 +417,9 @@ Map users to treatment group
 
 Monitor outcomes *per group*
 * Telemetry, sales, time on site, server load, crash rate
-</script></section><section data-markdown><script type="text/template">## Feature Flags (Boolean flags)
+
+<aside class="notes"><p>divide them into groups</p>
+</aside></script></section><section data-markdown><script type="text/template">## Feature Flags (Boolean flags)
 
 <div class="smallish">
 
@@ -436,14 +440,28 @@ def isEnabled(user): Boolean = (hash(user.id) % 100) < 10
 ```
 
 </div>
-</script></section><section data-markdown><script type="text/template">![split.io screenshot](splitio.png)
+
+<aside class="notes"><p>mapping somewhere One way of doing this randomly is hashing user ID
+random but stable
+same users always in the same group
+some offset to get a new sample
+for telemetry you need to know what group a user was in.
+Once you have a mapping from flags here then it&#39;s easier
+you can also use a load balancer to manage this you need an if statement somewhere
+chrome, facebook, if statements are in the backend/code</p>
+</aside></script></section><section data-markdown><script type="text/template">![split.io screenshot](splitio.png)
 <!-- .element: class="stretch" --> 
 
 
 
-
-
-</script></section></section><section ><section data-markdown><script type="text/template"># Confidence in A/B Experiments
+<aside class="notes"><p>There are companies that do this as a service
+exposre your database. 
+&quot;boolean option as a service&quot;
+most groups in the past have done it themselves</p>
+<p>launch darkley, pslit IO, open source libraries 
+gets complicated when you want to do multiple experiments, factorial design gets complicated
+the bing team wrote a whole book</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"># Confidence in A/B Experiments
 
 (statistical tests)
 </script></section><section data-markdown><script type="text/template">
@@ -468,11 +486,22 @@ average 3:13 min time on site
 
 average 3:24 min time on site
 
-<!-- colend --></script></section><section data-markdown><script type="text/template">## Comparing Distributions
+<!-- colend -->
+
+<aside class="notes"><p>What&#39;s the problem here?
+t test assumes a normal distribution</p>
+<p>statistical tests to see if it&#39;s random event</p>
+<p>who here knows about the t test?  It&#39;s one of the standard tests for this kind of thing.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Comparing Distributions
 
 ![Two distributions, 10000 samples each from a normal distribution](twodist.png)
 <!-- .element: class="stretch" --> 
-</script></section><section data-markdown><script type="text/template">## Different effect size, same deviations
+
+<aside class="notes"><p>means of the real distsurbitons from which this are sampled, chances that they&#39;re actually different</p>
+<p>t test captures that, it&#39;s old/simple, it&#39;s robust enough for almost everything we&#39;re doing here</p>
+<p>Originally for agriculture, all about barley vs. hops, it&#39;s about beer </p>
+<p>milestone 3 we&#39;re going to ask for statistical confidence, T test is fine.<br>all these tools implement this .</p>
+</aside></script></section><section data-markdown><script type="text/template">## Different effect size, same deviations
 
 <!-- colstart -->
 ![](twodist.png)
@@ -572,9 +601,10 @@ Source: https://cognetik.com/why-you-should-build-an-ab-test-dashboard/</script>
 <!-- Risk of spreading bad designs -->
 <!-- colend -->
 
-
-
-</script></section></section><section ><section data-markdown><script type="text/template"># A/B testing automation
+<aside class="notes"><p>50/50? New model vs. old model 
+about 1:10 to here 
+inherently risky, so you don&#39;t want too many  in experiment</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"># A/B testing automation
 
 * Experiment configuration through DSLs/scripts
 * Queue experiments
