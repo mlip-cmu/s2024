@@ -11,6 +11,7 @@
 	</style>
 	<script type="text/javascript"><!--
 
+	const maxTeamsize = 6;
 	function init() {
 		const teamsize = 6
 		const options = document.getElementById('tmpl')
@@ -53,11 +54,11 @@
 	}
 	function updateNr() {
 		const teamsize = parseInt(document.getElementById('nr').value)
-		for (let idx=4;idx<=6;idx++) {
+		for (let idx=4;idx<=maxTeamsize;idx++) {
 			console.log(idx,teamsize, idx<=teamsize)
 			document.getElementById('h'+idx).style.visibility = (idx<=teamsize ? '' : 'hidden')
 			document.getElementById('r'+idx).style.visibility = (idx<=teamsize ? '' : 'hidden')
-			for (let rater=1; rater<=teamsize; rater++) {
+			for (let rater=1; rater<=maxTeamsize; rater++) {
 				document.getElementById('r'+rater+idx).style.visibility = (idx<=teamsize ? '' : 'hidden')
 			}
 		}
