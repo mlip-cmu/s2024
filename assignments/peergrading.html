@@ -12,7 +12,7 @@
 	<script type="text/javascript"><!--
 
 	function init() {
-		const teamsize = 5
+		const teamsize = 6
 		const options = document.getElementById('tmpl')
 		for (let rater=1; rater<=teamsize; rater++) {
 			for (let rated=1; rated<=teamsize; rated++) {
@@ -53,7 +53,7 @@
 	}
 	function updateNr() {
 		const teamsize = parseInt(document.getElementById('nr').value)
-		for (let idx=4;idx<=5;idx++) {
+		for (let idx=4;idx<=6;idx++) {
 			console.log(idx,teamsize, idx<=teamsize)
 			document.getElementById('h'+idx).style.visibility = (idx<=teamsize ? '' : 'hidden')
 			document.getElementById('r'+idx).style.visibility = (idx<=teamsize ? '' : 'hidden')
