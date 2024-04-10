@@ -126,7 +126,12 @@ Difficult to define sensible fitness functions:
 Amodei, Dario, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Mané. "[Concrete problems in AI safety](https://arxiv.org/pdf/1606.06565.pdf%20http://arxiv.org/abs/1606.06565)." arXiv preprint arXiv:1606.06565 (2016).
 
 <aside class="notes"><p>program repair</p>
-</aside></script></section><section data-markdown><script type="text/template">## AI Alignment Problem = Requirements Problem
+</aside></script></section><section data-markdown><script type="text/template">## Gaming the model
+
+This is a problem in automatic bug fixing, and manual bug fixing, too!
+
+![Overfitting](overfit.png)
+</script></section><section data-markdown><script type="text/template">## AI Alignment Problem = Requirements Problem
 
 Recall: "World vs. machine"
 * Identify stakeholders in the environment & possible effects on them
@@ -553,24 +558,6 @@ As a group, tagging members, post to `#lecture`:
 > 3. How would you improve the robustness of the overall system?
 
 
-</script></section></section><section ><section data-markdown><script type="text/template"># Designing for Safety
-
-See Lecture **Planning for Mistakes**
-
-</script></section><section data-markdown><script type="text/template">## Safety Assurance with ML Components
-
-* Consider ML components as unreliable, at most probabilistic guarantees
-* Testing, testing, testing (+ simulation)
-  - Focus on data quality & robustness
-* *Adopt a system-level perspective!*
-* Consider safe system design with unreliable components
-  - Traditional systems and safety engineering
-  - Assurance cases
-* Understand the problem and the hazards
-  - System level, goals, hazard analysis, world vs machine
-  - Specify *end-to-end system behavior* if feasible
-
-
 </script></section></section><section ><section data-markdown><script type="text/template"># FMEA
 
 </script></section><section data-markdown><script type="text/template">## Reminder: Fault-Tree Analysis 
@@ -601,30 +588,13 @@ See Lecture **Planning for Mistakes**
   * Method for detecting the failure
   * Potential mitigation strategy
 
-</script></section><section data-markdown><script type="text/template">## FMEA Example: Autonomous Train Doors
-
-
-<!-- discussion -->
-
-Failure modes? Failure effects? Detection? Mitigation?
-
-
-</script></section><section data-markdown><script type="text/template">## Exercise: FMEA Analysis for Smart Toaster
-
-(video sensor, temperature sensor, heat sensor, user setting, ML model, heuristic shutdown, thermal fuse)
-
-
-Failure modes? Failure effects? Detection? Mitigation?
-
-<!-- discussion -->
-
 </script></section><section data-markdown><script type="text/template">## FMEA Excerpt: Autonomous Car
 
 ![FMEA for autonomous car](fmea-car.png)
 
 <!-- references -->
 
-Excerpt of an FMEA table for analyzing components in an autonomous vehicle, from 🗎 David Robert Beachum. Methods for assessing the safety of autonomous vehicles. University of Texas Theses and Dissertations (2019).
+Excerpt of an FMEA table for analyzing components in an autonomous vehicle, from  David Robert Beachum. Methods for assessing the safety of autonomous vehicles. University of Texas Theses and Dissertations (2019).
 </script></section><section data-markdown><script type="text/template">## "Wrong Prediction" as Failure Mode?
 
 "Wrong prediction" is a very cause grained failure mode of every model
@@ -642,8 +612,6 @@ Forward analysis: From components to possible failures
 Focus on single component failures, no interactions
 
 Identifying failure modes may require domain understanding
-
-
 
 </script></section></section><section ><section data-markdown><script type="text/template"># HAZOP
 
@@ -713,6 +681,7 @@ AFTER
 Additional ML-specific guidewords: WRONG, INVALID, INCOMPLETE, PERTURBED, and INCAPABLE.
 
 </script></section><section data-markdown><script type="text/template">## Breakout: Automated Train Doors
+<div class="smallish">
 
 Analyze the vision component to detect obstacles in train doors
 
@@ -735,6 +704,8 @@ Using HAZOP: As a group answer in `#lecture`, tagging group members:
 > * What are possible deviations from the specification?
 > * What are potential hazards resulting from these deviations?
 > * What possible mitigations would you consider? (e.g., human in the loop, undoable actions, guardrails, mistake detection and recovery, containment)
+
+</div>
 </script></section><section data-markdown><script type="text/template">## HAZOP: Benefits & Limitations
 
 * Easy to use; encourages systematic reasoning about component faults
@@ -753,7 +724,22 @@ None of these methods guarantee completeness
 Intended as structured approaches to thinking about failures
   * But cannot replace human expertise and experience
 
+</script></section></section><section ><section data-markdown><script type="text/template"># Designing for Safety
 
+See Lecture **Planning for Mistakes**
+
+</script></section><section data-markdown><script type="text/template">## Safety Assurance with ML Components
+
+* Consider ML components as unreliable, at most probabilistic guarantees
+* Testing, testing, testing (+ simulation)
+  - Focus on data quality & robustness
+* *Adopt a system-level perspective!*
+* Consider safe system design with unreliable components
+  - Traditional systems and safety engineering
+  - Assurance cases
+* Understand the problem and the hazards
+  - System level, goals, hazard analysis, world vs machine
+  - Specify *end-to-end system behavior* if feasible
 
 
 </script></section></section><section ><section data-markdown><script type="text/template"># Summary
