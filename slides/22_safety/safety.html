@@ -182,11 +182,7 @@ Accuracy is usually about reliability!
 <div class="tweet" data-src="https://twitter.com/skoops/status/1065700195776847872"></div>
 
 <aside class="notes"><p>Systems can be unsafe in unexpected ways</p>
-</aside></script></section><section data-markdown><script type="text/template">## IoT
-
-![Servers down](serversdown.png)
-<!-- .element: class="stretch" -->
-</script></section><section data-markdown><script type="text/template">## Safety is a broad concept
+</aside></script></section><section data-markdown><script type="text/template">## Safety is a broad concept
 
 Not just physical harms/injuries to people
 
@@ -195,8 +191,7 @@ Includes harm to mental health
 Includes polluting the environment, including noise pollution
 
 Includes harm to society, e.g. poverty, polarization
-
-## Beyond Traditional Safety Critical Systems
+</script></section><section data-markdown><script type="text/template">## Beyond Traditional Safety Critical Systems
 
 * Recall: Legal vs ethical
 * Safety analysis not only for regulated domains (nuclear power plants, medical devices, planes, cars, ...)
@@ -462,21 +457,6 @@ Image: [_An abstract domain for certifying neural networks_](https://dl.acm.org/
 
 ![Decision boundary](decisionboundary2.svg)
 <!-- .element: class="stretch" -->
-</script></section><section data-markdown><script type="text/template">## Robustness of Interpretable Models
-
-Is this model robust?
-
-Is the prediction for a 20 year old male with 2 priors robust? Against
-what perturbations? 
-
-```fortran
-IF age between 18–20 and sex is male THEN predict arrest
-ELSE 
-IF age between 21–23 and 2–3 prior offenses THEN predict arrest
-ELSE 
-IF more than three priors THEN predict arrest
-ELSE predict no arrest
-```
 </script></section><section data-markdown><script type="text/template">## Evaluating ML Robustness
 
 <div class="smallish">
@@ -506,7 +486,13 @@ ELSE predict no arrest
   * Can those parts change over time? Can the sensors be noisy,
   faulty, etc.,? (these are **domain-specific**)
   * What input pertburbations could be caused by from these changes/noise...?
-</script></section><section data-markdown><script type="text/template">## Robustness in a Safety Setting
+</script></section><section data-markdown><script type="text/template">## Robustness testing
+
+Evaluates the degree to which a system or component functions correctly in the
+presence of invalid inputs or stressful or off-nominal environmental conditions.
+
+<aside class="notes"><p>this has a rich history outside of ML!</p>
+</aside></script></section><section data-markdown><script type="text/template">## Robustness in a Safety Setting
 
 * Does the model detect stop signs under normal conditions?
 * Does the model detect stop signs under deviations?
@@ -519,7 +505,7 @@ ELSE predict no arrest
 * Does the model detect stop signs under normal settings?
 * Does the model detect stop signs under deviations?
   * Poor lighting? In fog? With a tilted camera? Sensor noise?
-  * With stickers taped to the sign? (Does it matter?)
+  * With stickers taped to the sign? 
 
 ![Stop Sign](stop-sign-adversarial.png)
 <!-- .element: class="stretch" -->
