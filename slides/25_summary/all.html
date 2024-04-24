@@ -825,14 +825,7 @@ Three steps:
 AI research team tried to train image recognition to identify tanks hidden in forests, trained on images of tanks in forests and images of same or similar forests without tanks. The model could clearly separate the learned pictures, but would perform poorly on other pictures.</p>
 <p>Turns out the pictures with tanks were taken on a sunny day whereas the other pictures were taken on a cloudy day. The model picked up on the brightness of the picture rather than the presence of a tank, which worked great for the training set, but did not generalize.</p>
 <p>Pictures: <a href="https://pixabay.com/photos/lost-places-panzer-wreck-metal-3907364/">https://pixabay.com/photos/lost-places-panzer-wreck-metal-3907364/</a>, <a href="https://pixabay.com/photos/forest-dark-woods-trail-path-1031022/">https://pixabay.com/photos/forest-dark-woods-trail-path-1031022/</a></p>
-</aside></script></section><section data-markdown><script type="text/template">## Production Data -- The Ultimate Unseen Validation Data
-
-more in a later lecture
-
-
-<div class="tweet" data-src="https://twitter.com/changelog/status/1137359428632621060"></div>
-
-</script></section><section data-markdown><script type="text/template">## Common Pitfalls of Evaluating Model Quality?
+</aside></script></section><section data-markdown><script type="text/template">## Common Pitfalls of Evaluating Model Quality?
 
 <!-- discussion -->
 
@@ -875,13 +868,7 @@ predictAndReport(train = train, test = test)
 ```
 
 
-</script></section><section data-markdown><script type="text/template">## Independence of Data: Temporal
-
-![Temporal dependence](temporaldependence.svg)
-<!-- .element: class="stretch plain" -->
-
-<aside class="notes"><p>The curve is the real trend, red points are training data, green points are validation data. If validation data is randomly selected, it is much easier to predict, because the trends around it are known.</p>
-</aside></script></section><section data-markdown><script type="text/template">## Independence of Data: Related Datapoints
+</script></section><section data-markdown><script type="text/template">## Independence of Data: Related Datapoints
 
 Example: Kaggle competition on detecting distracted drivers
 
@@ -1056,13 +1043,6 @@ See also https://en.wikipedia.org/wiki/All_models_are_wrong
 </script></section><section data-markdown><script type="text/template"># Team issues: Groupthink
 
 ![](groupthink.png)
-</script></section><section data-markdown><script type="text/template">## Groupthink
-
-* Group minimizing conflict
-* Avoid exploring alternatives
-* Suppressing dissenting views
-* Isolating from outside influences
-* -> Irrational/dysfunctional decision making</script></section><section data-markdown><script type="text/template">![](svposter.png)<!-- .element: style="width:950px" -->
 </script></section><section data-markdown><script type="text/template"># Team issues: Social loafing
 
 ![](tug.png)
