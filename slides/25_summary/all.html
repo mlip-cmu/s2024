@@ -129,47 +129,9 @@ Figure: Jason Yip. [Why T-shaped people?](https://medium.com/@jchyip/why-t-shape
 Monday/Wednesdays 1:25-2:45pm
 
 Recitation Fridays 10:10-11:00am / 1:25-2:45pm
-</script></section><section data-markdown><script type="text/template">## First Homework Assignment
-
-<!-- colstart -->
-*"Coding warmup assignment"*
-
-[Out now](https://github.com/ckaestne/seai/blob/F2022/assignments/I1_mlproduct.md), due Sep 7
-
-Enhance simple web *application* with ML-based feature: Automated image captioning
-
-Open ended coding assignment, change existing code, learn new APIs
-
-
-<!-- col -->
-![Screenshot of Albumy](albumy.png)
-<!-- colend -->
-
 </script></section><section data-markdown><script type="text/template">
 ![Class Overview](overview.svg)
 <!-- .element: class="plain" -->
-
-</script></section><section data-markdown><script type="text/template">## Reading Assignments & Quizzes
-
-<!-- colstart -->
-*Building Intelligent Systems*
-by Geoff Hulten
-
-https://www.buildingintelligentsystems.com/
-
-Most chapters assigned at some point in the semester
-
-Supplemented with research articles, blog posts, videos, podcasts, ...
-
-[Electronic version](https://cmu.primo.exlibrisgroup.com/permalink/01CMU_INST/6lpsnm/alma991019649190004436) in the library
-
-<!-- col -->
-
-![Building intelligent systems book](book.webp)
-
-<!-- colend -->
-
-
 </script></section><section data-markdown><script type="text/template">## Grading Philosophy
 
 Specification grading, based in adult learning theory
@@ -239,10 +201,6 @@ ML intensifies our challenges
 </script></section><section data-markdown><script type="text/template">## Why do we care about image captioning?
 
 ![Image captioning one step](imgcaptioning.png)
-
-
-</script></section><section data-markdown><script type="text/template">![Image Search on Google Photos](imagesearch.png)
-<!-- .element: class="plain stretch" -->
 
 </script></section><section data-markdown><script type="text/template">## Products using Image Synthesis?
 
@@ -405,30 +363,6 @@ Outside the model (e.g., "guardrails")
 
 
 
-</script></section><section data-markdown><script type="text/template">## Things change...
-
-
-<!-- colstart -->
-
-
-Newer better models released (better model architectures, more training data, ...)
-
-Goals and scope change (more domains, handling dialects, ...)
-
-The world changes (new products, names, slang, ...)
-
-Online experimentation
-
-
-
-<!-- col -->
-
-![Architecture diagram of transcription service; many components, not just ML](transcriptionarchitecture.svg)
-<!-- .element: class="plain" -->
-
-
-<!-- colend -->
-
 </script></section><section data-markdown><script type="text/template">## Monitoring in Production
 
 Design for telemetry
@@ -577,15 +511,7 @@ See also 🗎 Jackson, Michael. "[The world and the machine](https://web.archive
 ![Wizard of oz excerpt](wizard.gif)<!-- .element: style="width:800px" -->
 
 <aside class="notes"><p>In a wizard of oz experiment a human fills in for the ML model that is to be developed. For example a human might write the replies in the chatbot.</p>
-</aside></script></section><section data-markdown><script type="text/template">## Personas in GenderMag
-
-
-![Gendermag](gendermag1.png)
-
-
-See examples and details http://gendermag.org/foundations.php
-
-</script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
+</aside></script></section><section data-markdown><script type="text/template">## How much requirements eng. and when?
 
 ![Waterfall process picture](waterfall.svg)<!-- .element: class="plain" style="width:1100px" -->
 
@@ -621,12 +547,8 @@ Dashcam system
 
 ![Confounding variable example](confoundingvariables.svg)
 <!-- .element: class="plain" -->
-</script></section><section data-markdown><script type="text/template">## Reverse Causality
 
-![Chess](chess.jpg)
-
-<aside class="notes"><p>(from Prediction Machines, Chapter 6) Early 1980s chess  program learned from Grandmaster games, learned that sacrificing queen would be a winning move, because it was occuring frequently in winning games. Program then started to sacrifice queen early.</p>
-</aside></script></section><section data-markdown><script type="text/template">## Reasons barely matter
+</script></section><section data-markdown><script type="text/template">## Reasons barely matter
 
 No model is every "correct"
 
@@ -698,14 +620,6 @@ Recall: Thermal fuse in smart toaster
 
 + maximum toasting time + extra heat sensor
 
-</script></section><section data-markdown><script type="text/template">## Guardrails - Examples
-
-![Metro station Cour Saint-Émilion in Paris with automated platform screen doors that only open when a train is in the station](platformdoors.png)
-<!-- .element: class="stretch" -->
-
-<!-- references_ -->
-
-CC BY-SA 4.0 by Chabe01
 
 </script></section><section data-markdown><script type="text/template">## Mistake detection
 
@@ -760,13 +674,7 @@ As a group, post one design idea for each scenario to `#lecture` and tag all gro
 Toby Ord, "The Precipice: Existential Risk and the Future of Humanity", 2020
 
 <aside class="notes"><p>Discussion on existential risk. Toby Ord, Oxford philosopher predicts</p>
-</aside></script></section><section data-markdown><script type="text/template">## What's the worst that could happen?
-
-![Albumy screenshot](albumy.png)
-<!-- .element: class="stretch" -->
-
-
-</script></section><section data-markdown><script type="text/template">## What is Risk Analysis?
+</aside></script></section><section data-markdown><script type="text/template">## What is Risk Analysis?
 
 What can possibly go wrong in my system, and what are potential 
 impacts on system requirements?
@@ -780,28 +688,6 @@ A number of methods:
   * Fault tree analysis (FTA)
   * ...
 
-</script></section><section data-markdown><script type="text/template">## Fault Tree Analysis (FTA)
-
-<!-- colstart -->
-
-<div class="small">
-
-* Fault tree: A top-down diagram that displays the relationships
-between a system failure (i.e., requirement violation) and its potential causes.  
-  * Identify sequences of events that result in a failure
-  * Prioritize the contributors leading to the failure
-  * Inform decisions about how to (re-)design the system
-  * Investigate an accident & identify the root cause 
-* Often used for safety & reliability, but can also be used for
-other types of requirements (e.g., poor performance, security attacks...)
-
-</div>
-
-<!-- col -->
-
-![fta-sample](fta-sample.png)<!-- .element: style="width:400px" -->
-
-<!-- colend -->
 </script></section><section data-markdown><script type="text/template">![FTA for trapping people in doors of a train](fta.svg)
 </script></section><section data-markdown><script type="text/template">## Consider Mitigations
 
